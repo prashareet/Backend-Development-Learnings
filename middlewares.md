@@ -18,6 +18,34 @@ In **Express.js** (a Node.js library), middlewares are functions that have acces
   - Edit or modify the request.  
   - Send the modified request back to the final route handler.
 
+## **Code Snippet for Middleware Syntax**
+
+The following code demonstrates how to use middleware to log request details and add a timestamp to the request object. It also includes a POST route to calculate the sum of two numbers.
+
+```javascript
+// Middleware function
+function middleWare(req, res, next) {
+    console.log(`Method is ${req.method}`);
+    console.log(`Request URL is ${req.url}`);
+    // Uncomment the next line to log the timestamp
+    // console.log(`Timestamp is ${Date.now()}`);
+    req.requestTime = Date.now();
+    next();
+}
+
+// Use the middleware in the app
+app.use(middleWare);
+
+// POST route to calculate the sum of two numbers
+app.post("/sum", function(req, res) {
+    const a = parseInt(req.body.a);
+    const b = parseInt(req.body.b);
+
+    res.json({
+        ans: a + b
+    });
+});
+
 
 
 
