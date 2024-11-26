@@ -1,5 +1,5 @@
 # **MIDDLEWARES**  
-A small attempt to simplify the understanding and use case of **Middlewares** and **CORS** for backend development.
+A small attempt to simplify the understanding and use case of **Middlewares**  for backend development.
 
 ## **What is a Middleware in Simple Terms?**
 
